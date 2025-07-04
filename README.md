@@ -26,14 +26,22 @@ Anti-bot protections and CAPTCHAs are widely used to block malicious automated a
 
 ## Common AntiBot & CAPTCHA Protections
 
-Protection               | Description                                    | Official Website                             
-------------------------|------------------------------------------------|----------------------------------------------
-Baleen                  | Advanced cookie and session management anti-bot | https://baleen.cloud/          
-Cloudflare              | Web security platform with challenge pages       | https://www.cloudflare.com/                   
-Akamai                  | CDN and web security with bot detection           | https://www.akamai.com/                        
-Amazon WAF              | Web application firewall on AWS                     | https://aws.amazon.com/waf/                    
-hCaptcha                | Popular CAPTCHA alternative                         | https://www.hcaptcha.com/                      
-reCAPTCHA               | Google's CAPTCHA service                            | https://developers.google.com/recaptcha      
+
+
+| Protection      | Description                                             | How to Detect It                                                                 | Official Website                                      |
+|-----------------|---------------------------------------------------------|----------------------------------------------------------------------------------|--------------------------------------------------------|
+| **Baleen**       | Cookie/session-based anti-bot layer                    | HTML contains a hidden input or script with `visit_baleen_ACM-*`                | [baleen.cloud](https://baleen.cloud/)                 |
+| **Cloudflare**   | Proxy with challenge pages, JS, CAPTCHA, UAM           | `cf_clearance` cookie, redirection to `/cdn-cgi/challenge`, JS injected         | [cloudflare.com](https://www.cloudflare.com/)         |
+| **Akamai**       | CDN with behavior-based bot detection                  | `Server-Timing` header, JS with `_abck` cookie or `akamai-bot-manager` script   | [akamai.com](https://www.akamai.com/)                 |
+| **Amazon WAF**   | AWS Web Application Firewall                           | 403 errors, AWS headers, or `AWSALB`/`AWSELB` cookies                            | [aws.amazon.com/waf](https://aws.amazon.com/waf/)     |
+| **hCaptcha**     | CAPTCHA alternative with better privacy                | `<iframe>` or `<script>` from `hcaptcha.com/1/api.js`, `data-sitekey` element   | [hcaptcha.com](https://www.hcaptcha.com/)             |
+| **reCAPTCHA**    | Google’s CAPTCHA (v2/v3)                               | Scripts from `google.com/recaptcha/`, `g-recaptcha` div, or hidden token input  | [recaptcha](https://developers.google.com/recaptcha)  |
+| **Imperva Incapsula** | Enterprise bot and DDoS protection                 | `___utmvc` cookie, hidden JS challenge, fingerprinting tokens                   | [imperva.com](https://www.imperva.com/)               |
+| **Datadome**     | Real-time bot mitigation & device fingerprinting       | Cookie named `datadome`, blocked responses via JavaScript                      | [datadome.co](https://datadome.co/)                   |
+| **PerimeterX**   | Behavioral bot protection platform                     | Obfuscated JS, cookie like `_px` or `_pxvid`, 403 with fingerprint checks       | [perimeterx.com](https://www.perimeterx.com/)         |
+| **Fastly Bot Manager** | CDN with bot & WAF rules                         | `Fastly-*` headers, behavior-based blocking                                     | [fastly.com](https://www.fastly.com/)                 |
+| **F5 Bot Defense** | TLS fingerprinting + browser verification            | TLS-level blocking, JS browser validation, possible redirects                   | [f5.com](https://www.f5.com/)                         |
+
 
 ---
 
