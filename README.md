@@ -8,7 +8,7 @@ This repository collects practical techniques, guides, and code samples to bypas
 
 - [Introduction](#introduction)  
 - [Common AntiBot & CAPTCHA Protections](#common-antibot--captcha-protections)  
-- [Bypass Techniques](#bypass-techniques)  
+- [Best Practices](#best-practices)  
   - [Baleen Bypass](#baleen-bypass)  
   - [Cloudflare, Akamai, Amazon WAF Bypass](#cloudflare-akamai-amazon-waf-bypass)  
   - [CSRF Token Bypass](#csrf-token-bypass)  
@@ -23,6 +23,7 @@ Anti-bot protections and CAPTCHAs are widely used to block malicious automated a
 
 ---
 
+
 ## Common AntiBot & CAPTCHA Protections
 
 Protection               | Description                                    | Official Website                             
@@ -36,7 +37,22 @@ reCAPTCHA               | Google's CAPTCHA service                            | 
 
 ---
 
-## Bypass Techniques
+### Best Practices
+
+- **Use Mobile or Alternative Browser User-Agents**  
+  Many anti-bot systems have lighter protection for mobile browsers or less common desktop browsers. Using user-agent strings from Android, iOS (Safari), Firefox, or Opera can help avoid default detection rules that target Chrome automation.
+
+- **Avoid VPN and Datacenter IPs — Use Residential Proxies**  
+  Most bot mitigation platforms use threat intelligence databases to detect IP reputation. VPNs and datacenter proxies are often flagged as high-risk. Instead, opt for residential proxies with low detection scores. These proxies rotate real ISP-assigned IP addresses that mimic human users more reliably.
+
+- **Use `tls-client` for Requests Instead of `requests` or `httpx`**  
+  Libraries like [`tls-client`](https://github.com/FlorianREGAZ/Python-Tls-Client) allow your requests to imitate real browsers by customizing JA3 fingerprints and using modern TLS versions. Traditional libraries like `requests` often expose your automation via outdated TLS or HTTP/1.1 fingerprints.
+
+- **Bypass Cloudflare UAM by Finding the Backend IP Address**  
+  Cloudflare serves as a reverse proxy that filters traffic before it reaches the origin server. If you can discover the origin server’s real IP (e.g., via DNS leaks or services like [Censys](https://search.censys.io/)), you may be able to bypass Cloudflare entirely and send requests directly to the backend.
+
+- **Use Mobile API Endpoints When Available**  
+  Many modern applications use separate infrastructure for mobile apps. These mobile APIs (`/api/v2/mobile/...`, etc.) may lack the full protection stack (e.g., no JavaScript challenges or CAPTCHA), making them easier to automate. Always inspect app traffic using tools like `mitmproxy` or `charlesproxy`.
 
 ### Baleen Bypass
 
@@ -108,7 +124,6 @@ payload = {
 post_response = session.post(login_url, data=payload)
 print(post_response.status_code)
 ```
-
 ---
 
 ## Recommended Libraries
