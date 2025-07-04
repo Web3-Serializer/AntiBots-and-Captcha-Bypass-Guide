@@ -42,7 +42,7 @@ reCAPTCHA               | Google's CAPTCHA service                            | 
 - **Use Mobile or Alternative Browser User-Agents**  
   Many anti-bot systems have lighter protection for mobile browsers or less common desktop browsers. Using user-agent strings from Android, iOS (Safari), Firefox, or Opera can help avoid default detection rules that target Chrome automation.
 
-- **Avoid VPN and Datacenter IPs — Use Residential Proxies**  
+- **Avoid VPN and Datacenter IPs, Use Residential Proxies**  
   Most bot mitigation platforms use threat intelligence databases to detect IP reputation. VPNs and datacenter proxies are often flagged as high-risk. Instead, opt for residential proxies with low detection scores. These proxies rotate real ISP-assigned IP addresses that mimic human users more reliably.
 
 - **Use `tls-client` for Requests Instead of `requests` or `httpx`**  
