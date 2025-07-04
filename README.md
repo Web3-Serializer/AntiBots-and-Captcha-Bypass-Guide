@@ -64,7 +64,7 @@ else:
 
 ### Cloudflare, Akamai, Amazon WAF Bypass
 
-- **Cloudflare (UAM disabled) and Akamai Passive**: Can often be bypassed with a full TLS handshake client emulation like [tls-client](https://github.com/VeNoMouS/tls-client).
+- **Cloudflare (UAM disabled) and Akamai Passive**: Can often be bypassed with a full TLS handshake client emulation like [tls-client](https://github.com/FlorianREGAZ/Python-Tls-Client).
 - **Amazon WAF**: Typically bypassed using browser automation with [undetected-chromedriver](https://github.com/ultrafunkamsterdam/undetected-chromedriver) to interact with challenge elements.
 
 Using forged TLS fingerprints and mobile UserAgents often improves bypass success rates.
@@ -115,10 +115,9 @@ print(post_response.status_code)
 
 Protection Library      | Description                           | GitHub Link                                               
 ------------------------|-------------------------------------|-----------------------------------------------------------
-tls-client              | Full TLS client with fingerprinting | https://github.com/VeNoMouS/tls-client                    
-undetected-chromedriver | Stealthy ChromeDriver for Selenium  | https://github.com/ultrafunkamsterdam/undetected-chromedriver
-cloudscraper            | Cloudflare bypass for Python requests| https://github.com/VeNoMouS/cloudscraper                  
-anticaptchaofficial     | CAPTCHA solving API client           | https://github.com/Anti-Captcha/anticaptcha-python        
+tls-client              | Full TLS client with fingerprinting | https://github.com/FlorianREGAZ/Python-Tls-Client                  
+undetected-chromedriver | Stealthy ChromeDriver for Selenium  | https://github.com/ultrafunkamsterdam/undetected-chromedriver      
+anticaptchaofficial *[PAID]*     | CAPTCHA solving API client           | https://github.com/Anti-Captcha/anticaptcha-python        
 
 ---
 
