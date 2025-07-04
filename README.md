@@ -6,15 +6,14 @@ This repository collects practical techniques, guides, and code samples to bypas
 
 ## Table of Contents
 
-- Introduction  
-- Common AntiBot & CAPTCHA Protections  
-- Bypass Techniques  
-  - Baleen Bypass  
-  - Cloudflare, Akamai, Amazon WAF Bypass  
-  - CSRF Token Bypass  
-- Recommended Libraries  
-- Code Examples  
-- Disclaimer  
+- [Introduction](#introduction)  
+- [Common AntiBot & CAPTCHA Protections](#common-antibot--captcha-protections)  
+- [Bypass Techniques](#bypass-techniques)  
+  - [Baleen Bypass](#baleen-bypass)  
+  - [Cloudflare, Akamai, Amazon WAF Bypass](#cloudflare-akamai-amazon-waf-bypass)  
+  - [CSRF Token Bypass](#csrf-token-bypass)  
+- [Recommended Libraries](#recommended-libraries)  
+- [Disclaimer](#disclaimer)  
 
 ---
 
@@ -28,7 +27,7 @@ Anti-bot protections and CAPTCHAs are widely used to block malicious automated a
 
 Protection               | Description                                    | Official Website                             
 ------------------------|------------------------------------------------|----------------------------------------------
-Baleen                  | Advanced cookie and session management anti-bot | https://www.baleensecurity.com/              
+Baleen                  | Advanced cookie and session management anti-bot | https://baleen.cloud/          
 Cloudflare              | Web security platform with challenge pages       | https://www.cloudflare.com/                   
 Akamai                  | CDN and web security with bot detection           | https://www.akamai.com/                        
 Amazon WAF              | Web application firewall on AWS                     | https://aws.amazon.com/waf/                    
